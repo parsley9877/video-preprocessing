@@ -73,7 +73,7 @@ class BasicPreprocessing(keras.Model):
             self.process_layers = Sequential([process_normalization_layer])
             self.inverse_process_layers = Sequential([inverse_process_normalization_layer1, inverse_process_normalization_layer2])
 
-    def process(self, input_data):
+    def process(self, input_data: tf.Tensor):
         """
         Description: process the input batch of data
 
@@ -83,7 +83,7 @@ class BasicPreprocessing(keras.Model):
         x = self.process_layers(input_data)
         return x
 
-    def call(self, input_data):
+    def call(self, input_data: tf.Tensor):
         """
         Description: process the input batch of data
 
@@ -93,7 +93,7 @@ class BasicPreprocessing(keras.Model):
         x = self.process_layers(input_data)
         return x
 
-    def inverse_process(self, input_data):
+    def inverse_process(self, input_data: tf.Tensor):
         """
         Description: inverse process on processed video
 
